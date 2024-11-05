@@ -1,7 +1,9 @@
 import ListaDeTareas from '@/components/ListaDeTareas.vue';
 <template>
   <div class="sidebar">
-    <h2>Barra lateral</h2>
+    <h2>Bienvenido</h2>
+    <h3>Nombre: {{ registrarStore.nombre }}</h3>
+    <h3>Email: {{ registrarStore.email }}</h3>
     <ul>
         <li>
             <router-link to="/contador">
@@ -18,11 +20,19 @@ import ListaDeTareas from '@/components/ListaDeTareas.vue';
                 Registrar
             </router-link>
         </li>
+        <li>
+            <router-link to="/calcular">
+                Calcular
+            </router-link>
+        </li>
     </ul>
   </div>
 </template>
 
 <script setup>
+import { useRegistrarStore } from '@/modules/registro/stores/registrarStore';
+
+const registrarStore = useRegistrarStore();
 
 </script>
 
